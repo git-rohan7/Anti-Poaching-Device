@@ -107,3 +107,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+## writting train.py at disk
+!pip install ultralytics -q
+!python train.py --data_root /kaggle/input/datasets/sikdermdsaiful/thermal-images-for-human-detection/dataset --epochs 60 --model yolov8n.pt
