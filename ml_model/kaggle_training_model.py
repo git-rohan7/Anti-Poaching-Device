@@ -17,7 +17,7 @@ def build_data_yaml(data_root: Path, out_path: Path, class_names):
     data_cfg = {
         "path": str(data_root.resolve()),
         "train": "train/images",
-        "val": "test/images",   # dataset only has train/test, so we validate on test
+        "val": "test/images", 
         "names": {i: name for i, name in enumerate(class_names)},
     }
     with open(out_path, "w") as f:
@@ -75,7 +75,6 @@ def main():
     data_yaml_path = Path("data.yaml")
     build_data_yaml(data_root, data_yaml_path, class_names)
 
-    # Import here so --help works even before ultralytics is installed
     from ultralytics import YOLO
 
     print(f"[train.py] Loading base model {args.model} ...")
@@ -100,7 +99,6 @@ def main():
     print(f"\n[train.py] DONE. Best weights saved at: {best_weights}")
     print("[train.py] Download this file — you'll load it in app.py for inference.")
 
-    # Convenience copy to a flat, easy-to-find location
     export_path = Path("best_human_thermal.pt")
     if best_weights.exists():
         shutil.copy(best_weights, export_path)
