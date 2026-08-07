@@ -1,1 +1,1 @@
-
+Contains mainly human IR Pictures along with some animal IR pictures which is used to train a Human Detection YOLOv8 model.
