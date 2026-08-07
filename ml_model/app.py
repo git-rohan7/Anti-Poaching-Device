@@ -85,6 +85,7 @@ with tab_live:
             media_stream_constraints={"video": True, "audio": False},
             async_processing=True,
         )
+        # using click photo whel live streaming is unavailable due to p[ackage issue
     else:
         st.warning(
             "For real-time streaming, install `streamlit-webrtc` "
@@ -159,7 +160,6 @@ with tab_video:
 
                 out_path = Path("tmp_output_video") / f"detected_{uploaded_vid.name}"
                 out_path.parent.mkdir(exist_ok=True)
-                # mp4v is broadly compatible; browser playback works for most cases
                 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
                 writer = cv2.VideoWriter(str(out_path), fourcc, fps, (width, height))
 
