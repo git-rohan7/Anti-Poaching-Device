@@ -8,7 +8,7 @@ Adafruit_MLX90640 mlx;
 
 float frame[32 * 24];
 
-const float TEMP_OFFSET = 3.5;        // Lowered — see note below
+const float TEMP_OFFSET = 3.5;       
 const int HOT_PIXEL_THRESHOLD = 12;
 
 // Rolling baseline ambient (captured only when PIR is LOW)
